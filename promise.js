@@ -14,3 +14,11 @@ Promise.resolve(1)
 	.then(y => console.log(y))
 	//catchs any errors which there is not
 	.catch(console.error);
+//breaks because you aren't suppose to throw error in a async function (NO POINT IN USING A PROMISE IN THIS CASE)
+new Promise((resolve,reject)=>{
+	throw new Error("error");
+}).then(console.log)
+
+new Promise((resolve,reject)=>{
+}).catch(console.error)
+.then(console.log)
